@@ -1,0 +1,17 @@
+NØ LAUNCHER — ANDROIDIDE BUILD NOTES
+
+The previous archive omitted the Gradle launcher script. This corrected archive adds gradlew and gradlew.bat.
+
+In AndroidIDE:
+1. Extract this ZIP fully.
+2. Open the folder named no_launcher (the folder containing settings.gradle.kts).
+3. Allow project sync/downloads.
+4. If AndroidIDE asks for a Gradle distribution, select/install Gradle 8.9 or compatible.
+5. Run the debug build task: :app:assembleDebug
+
+If AndroidIDE's build button still reports that Gradle cannot be found, open its terminal in the project root and run:
+  gradle --version
+If that command is unavailable, configure/install Gradle in AndroidIDE first. The launcher script delegates to the Gradle executable provided by the IDE; it does not bundle the Gradle distribution.
+
+Expected APK after a successful build:
+  app/build/outputs/apk/debug/app-debug.apk

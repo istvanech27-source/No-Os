@@ -1,0 +1,33 @@
+NØ LAUNCHER – SESTAVENÍ APK PŘES GITHUB (BEZ POČÍTAČE)
+
+1) Na GitHubu vytvoř nový repozitář. Název například no-launcher.
+   Pro nejjednodušší postup nastav Public (nebo Private, pokud chceš zdroj neveřejný).
+   Nezaškrtávej Add README / .gitignore / license – repozitář nech prázdný.
+
+2) Otevři repozitář v prohlížeči telefonu.
+   Zvol Add file > Upload files.
+
+3) Rozbal tento ZIP v telefonu. Nahraj OBSAH složky projektu, nikoli samotný ZIP.
+   Důležité: v kořeni repozitáře musí být přímo soubory:
+     settings.gradle.kts
+     build.gradle.kts
+     gradle.properties
+     app/...
+     .github/workflows/build-apk.yml
+   Složka .github je skrytá. Pokud ji správce souborů nezobrazuje, zapni zobrazení skrytých souborů.
+
+4) Dole na stránce stiskni Commit changes.
+
+5) V repozitáři otevři záložku Actions. Vyber workflow "Build NØ Launcher APK".
+   Pokud se workflow neukáže automaticky, obnov stránku. Můžeš použít Run workflow.
+
+6) Počkej, až běh zezelená (Success). Otevři dokončený běh a dole v části Artifacts
+   stáhni NO-Launcher-debug-apk. Rozbal stažený ZIP – uvnitř je app-debug.apk.
+
+7) Otevři app-debug.apk v telefonu a povol instalaci z tohoto zdroje, pokud se Android zeptá.
+   Potom Nastavení > Aplikace > Výchozí aplikace > Domovská aplikace a vyber NØ Launcher.
+
+POZNÁMKY:
+- První sestavení může trvat několik minut.
+- Pokud Actions selže, otevři neúspěšný běh, rozklikni krok s chybou a pošli screenshot nebo text chyby.
+- APK je zatím debug build určený k testování, ne podepsaná produkční verze.
